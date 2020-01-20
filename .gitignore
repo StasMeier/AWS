@@ -16,6 +16,7 @@ HELP.md
 
 .env
 .env.local
+.gitignore
 
 ### IntelliJ IDEA ###
 .idea

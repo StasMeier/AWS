@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="988833be-36ea-4acf-b997-0f77114e6dd1" name="Default Changelist" comment="" />
+    <list default="true" id="988833be-36ea-4acf-b997-0f77114e6dd1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +16,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -22,6 +27,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1WeJYUmvPoANUAeIEucIUSgitSY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -80,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579504175179</updated>
-      <workItem from="1579504177577" duration="3739000" />
+      <workItem from="1579504177577" duration="4516000" />
     </task>
     <servers />
   </component>
@@ -92,6 +98,10 @@
       <screen x="-2560" y="-517" width="2560" height="1400" />
     </state>
     <state x="-1826" y="-161" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-2560.-517.2560.1400@-2560.-517.2560.1400" timestamp="1579506739571" />
+    <state x="-1518" y="-13" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579509177260">
+      <screen x="-2560" y="-517" width="2560" height="1400" />
+    </state>
+    <state x="-1518" y="-13" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/-2560.-517.2560.1400@-2560.-517.2560.1400" timestamp="1579509177260" />
     <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1579508250220">
       <screen x="-2560" y="-517" width="2560" height="1400" />
     </state>

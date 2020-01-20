@@ -1,9 +1,27 @@
 spring:
   profiles:
-    active: web
+    active: aws
   application:
     name: CodeGuru
-    admin:
-      enabled: false
+
 server:
   port: 9000
+
+cloud:
+  aws:
+    stack:
+      auto: false
+    credentials:
+      instanceProfile: true
+      useDefaultAwsCredentialsChain: true
+    region:
+      static: us-west-1
+
+aws:
+  region: eu-west-1
+  username: code_guru
+  accessKey: AKIA6JSI75KLW5U63ENH
+  secretKey: /im/HSrR4DqY/FHh6GrEbzj8h3HfRRD48LUGVvN
+  profiling:
+    group:
+      name: CDI_AG

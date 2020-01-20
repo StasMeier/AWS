@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: web
+  application:
+    name: CodeGuru
+    admin:
+      enabled: false
+server:
+  port: 9000

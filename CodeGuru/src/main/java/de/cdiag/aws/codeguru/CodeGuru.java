@@ -1,6 +1,6 @@
 package de.cdiag.aws.codeguru;
 
-import de.cdiag.aws.codeguru.configuration.AwsConfiguration;
+import de.cdiag.aws.codeguru.configuration.AwsConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +12,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import software.amazon.codeguruprofilerjavaagent.Profiler;
 
 import javax.annotation.PreDestroy;
-import java.util.HashMap;
-import java.util.concurrent.ConcurrentHashMap;
 
 
 @SpringBootApplication
@@ -22,24 +20,19 @@ public class CodeGuru implements CommandLineRunner {
 
     private final Logger logger = LoggerFactory.getLogger(CodeGuru.class);
 
-    private AwsConfiguration awsConfiguration;
+    private AwsConfig awsConfig;
     private Profiler prof;
 
     @Autowired
-    public CodeGuru(final AwsConfiguration _awsConfiguration) {
-        this.awsConfiguration = _awsConfiguration;
-        System.setProperty("aws.region", this.awsConfiguration.getRegion());
-        prof = this.awsConfiguration.awsCodeGuruProfiler();
-    }
-
-    public void print(String t) {
-        System.out.println(t);
+    public CodeGuru(final AwsConfig _awsConfig) {
+        this.awsConfig = _awsConfig;
+        System.setProperty("aws.region", this.awsConfig.getRegion());
+        prof = this.awsConfig.awsCodeGuruProfiler();
     }
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("CDI AG Profiler started for Region \"" + this.awsConfiguration.getRegion() + "\"");
-        this.print(null);
+        logger.info("CDI AG Profiler started for Region \"" + this.awsConfig.getRegion() + "\"");
         prof.start();
     }
 

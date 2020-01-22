@@ -12,7 +12,7 @@ import software.amazon.codeguruprofilerjavaagent.Profiler;
 @Configuration
 @Data
 @Profile("aws")
-public class AwsConfiguration {
+public class AwsConfig {
 
     @Value("${aws.username}")
     protected String awsUsername;

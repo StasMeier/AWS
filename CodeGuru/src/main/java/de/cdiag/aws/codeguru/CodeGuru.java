@@ -12,6 +12,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import software.amazon.codeguruprofilerjavaagent.Profiler;
 
 import javax.annotation.PreDestroy;
+import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 
 @SpringBootApplication
@@ -48,6 +50,11 @@ public class CodeGuru implements CommandLineRunner {
 
 
     public static void main(String[] args) {
+        ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<>();
+        for(int i = 0; i < 10; i++) {
+            map.put(i, "test");
+        }
+
         new SpringApplicationBuilder(CodeGuru.class)
                 .bannerMode(Banner.Mode.OFF)
                 .run(args);

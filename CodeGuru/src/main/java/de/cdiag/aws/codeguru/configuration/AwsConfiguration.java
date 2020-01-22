@@ -2,9 +2,7 @@ package de.cdiag.aws.codeguru.configuration;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import software.amazon.awssdk.auth.credentials.AwsCredentials;
 import software.amazon.awssdk.auth.credentials.AwsCredentialsProvider;
@@ -31,7 +29,6 @@ public class AwsConfiguration {
     @Value("${aws.profiling.group.name}")
     protected String profilingGroupName;
 
-    @Bean
     public Profiler awsCodeGuruProfiler() {
         return new Profiler.Builder()
                 .profilingGroupName(profilingGroupName)
@@ -39,8 +36,6 @@ public class AwsConfiguration {
                 .build();
     }
 
-    @Bean
-    @Primary
     public AwsCredentialsProvider amazonAWSCredentials() {
         return () -> new AwsCredentials() {
             @Override

@@ -47,7 +47,7 @@
             "dependsOn": null,
             "disableNetworking": false,
             "interactive": null,
-            "healthCheck": "/api/health/check",
+            "healthCheck": null,
             "essential": true,
             "links": [],
             "hostname": null,

@@ -12,8 +12,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import software.amazon.codeguruprofilerjavaagent.Profiler;
 
 import javax.annotation.PreDestroy;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 
 @SpringBootApplication
@@ -36,14 +34,6 @@ public class CodeGuru implements CommandLineRunner {
     public void run(String... args) {
         logger.info("CDI AG Profiler started for Region \"" + this.awsConfig.getRegion() + "\"");
 
-        try {
-            Process p = Runtime.getRuntime().exec("date");
-            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            System.out.println(in.readLine());
-            in.close();
-        } catch (Throwable t) {
-
-        }
         prof.start();
     }
 

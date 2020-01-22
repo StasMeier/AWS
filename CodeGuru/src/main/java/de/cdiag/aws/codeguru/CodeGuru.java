@@ -33,14 +33,17 @@ public class CodeGuru implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         logger.info("CDI AG Profiler started for Region \"" + this.awsConfig.getRegion() + "\"");
 
-        Process p = Runtime.getRuntime().exec("date");
-        BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-        System.out.println(in.readLine());
-        in.close();
+        try {
+            Process p = Runtime.getRuntime().exec("date");
+            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            System.out.println(in.readLine());
+            in.close();
+        } catch (Throwable t) {
 
+        }
         prof.start();
     }
 

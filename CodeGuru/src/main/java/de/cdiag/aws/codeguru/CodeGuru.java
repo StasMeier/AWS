@@ -26,27 +26,30 @@ public class CodeGuru implements CommandLineRunner {
     @Autowired
     public CodeGuru(final AwsConfiguration _awsConfiguration) {
         this.awsConfiguration = _awsConfiguration;
+        System.setProperty("aws.region", this.awsConfiguration.getRegion());
         prof = this.awsConfiguration.awsCodeGuruProfiler();
     }
 
-    public static void main(String[] args) {
-
-        new SpringApplicationBuilder(CodeGuru.class)
-                .bannerMode(Banner.Mode.OFF)
-                .run(args);
-    }
 
     @Override
     public void run(String... args) throws Exception {
         logger.info("CDI AG Profiler started for Region \"" + this.awsConfiguration.getRegion() + "\"");
-        System.setProperty("aws.region", this.awsConfiguration.getRegion());
 
-        prof.start();
+//        prof.start();
     }
 
     @PreDestroy
     private void stop() {
         logger.info("Stopping Profiler");
-        prof.stop();
+        if (prof.isRunning()) {
+            prof.stop();
+        }
+    }
+
+
+    public static void main(String[] args) {
+        new SpringApplicationBuilder(CodeGuru.class)
+                .bannerMode(Banner.Mode.OFF)
+                .run(args);
     }
 }

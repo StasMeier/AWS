@@ -15,7 +15,7 @@ cloud:
       instanceProfile: true
       useDefaultAwsCredentialsChain: true
     region:
-      static: us-west-1
+      static: eu-west-1
 
 aws:
   region: eu-west-1

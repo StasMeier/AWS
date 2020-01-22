@@ -69,7 +69,7 @@
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "networkMode": "host",
+    "networkMode": "awsvpc",
     "cpu": "256",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,

@@ -45,9 +45,9 @@
             "startTimeout": null,
             "firelensConfiguration": null,
             "dependsOn": null,
-            "disableNetworking": null,
+            "disableNetworking": false,
             "interactive": null,
-            "healthCheck": null,
+            "healthCheck": "/api/health/check",
             "essential": true,
             "links": [],
             "hostname": null,
@@ -69,7 +69,7 @@
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "networkMode": "awsvpc",
+    "networkMode": "host",
     "cpu": "256",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,

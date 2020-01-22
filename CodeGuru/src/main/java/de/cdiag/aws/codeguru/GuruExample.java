@@ -21,7 +21,7 @@ class GuruExample {
             thing[i] = 'x';
         }
 
-        System.out.println("Did a thing");
+        System.out.println("Did a thingasdasdasdasd");
 
         HashMap<String, Whatsit> thang = new HashMap<String, Whatsit>();
         foo(thang);

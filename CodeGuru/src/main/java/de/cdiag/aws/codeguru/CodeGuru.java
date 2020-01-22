@@ -32,12 +32,15 @@ public class CodeGuru implements CommandLineRunner {
         prof = this.awsConfiguration.awsCodeGuruProfiler();
     }
 
+    public void print(String t) {
+        System.out.println(t);
+    }
 
     @Override
     public void run(String... args) throws Exception {
         logger.info("CDI AG Profiler started for Region \"" + this.awsConfiguration.getRegion() + "\"");
-
-//        prof.start();
+        this.print(null);
+        prof.start();
     }
 
     @PreDestroy
@@ -50,11 +53,6 @@ public class CodeGuru implements CommandLineRunner {
 
 
     public static void main(String[] args) {
-        ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<>();
-        for(int i = 0; i < 10; i++) {
-            map.put(i, "test");
-        }
-
         new SpringApplicationBuilder(CodeGuru.class)
                 .bannerMode(Banner.Mode.OFF)
                 .run(args);

@@ -4,8 +4,8 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.PropertySource;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
-import software.amazon.awssdk.auth.credentials.AwsCredentials;
 import software.amazon.awssdk.auth.credentials.AwsCredentialsProvider;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
@@ -13,6 +13,7 @@ import software.amazon.codeguruprofilerjavaagent.Profiler;
 
 
 @Configuration
+@PropertySource(value = "classpath:aws.gitignore.yml")
 @Data
 @Profile("aws")
 public class AwsConfig {
@@ -42,18 +43,5 @@ public class AwsConfig {
 
     public AwsCredentialsProvider amazonAWSCredentials() {
         return StaticCredentialsProvider.create(AwsBasicCredentials.create(getAwsAccessKey(),getAwsSecretKey()));
-/*        return () -> new AwsCredentials() {
-            @Override
-            public String accessKeyId() {
-                System.out.println("awsAccessKey: " + awsAccessKey);
-                return getAwsAccessKey();
-            }
-
-            @Override
-            public String secretAccessKey() {
-                System.out.println("awsSecretAccessKey " + awsSecretKey);
-                return getAwsAccessKey();
-            }
-        };*/
     }
 }

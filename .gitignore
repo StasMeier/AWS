@@ -38,3 +38,9 @@ build/
 ### NodeJS ###
 src/main/client/package-lock.json
 /node_modules/
+
+### application.gitignore.properties ###
+/**/src/main/resources/*.gitignore.yml
+/**/src/main/resources/*.gitignore.properties
+/src/main/resources/*.gitignore.yml
+/src/main/resources/*.gitignore.properties

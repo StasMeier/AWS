@@ -6,12 +6,3 @@ spring:
 
 server:
   port: 9000
-
-aws:
-  region: us-west-2
-  username: code_guru
-  accessKey: AKIA6JSI75KLSPA42B4X
-  secretKey: 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
-  profiling:
-    group:
-      name: CDI_AG

@@ -26,7 +26,6 @@ public class CodeGuru implements CommandLineRunner {
     @Autowired
     public CodeGuru(final AwsConfig _awsConfig) {
         this.awsConfig = _awsConfig;
-        System.setProperty("aws.region", this.awsConfig.getRegion());
         prof = this.awsConfig.awsCodeGuruProfiler();
     }
 

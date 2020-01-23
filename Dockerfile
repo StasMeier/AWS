@@ -6,7 +6,7 @@ RUN apt-get install -y apt-utils
 RUN apt-get -y install htop
 RUN apt-get install -y maven
 
-ENV AWS_REGION="eu_west_1"
+ENV AWS_REGION="us_west_2"
 ENV APPDIR=/usr/app
 WORKDIR $APPDIR
 

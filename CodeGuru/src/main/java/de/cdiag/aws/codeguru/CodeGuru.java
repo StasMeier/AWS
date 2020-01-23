@@ -32,7 +32,7 @@ public class CodeGuru implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        logger.info("CDI AG Profiler started for Region \"" + this.awsConfig.getRegion() + "\"");
+        logger.info("CDI AG Profiler started for Region \"{}\"", this.awsConfig.getRegion());
 
         prof.start();
     }

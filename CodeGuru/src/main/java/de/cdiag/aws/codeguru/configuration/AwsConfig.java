@@ -4,8 +4,11 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.AwsCredentials;
 import software.amazon.awssdk.auth.credentials.AwsCredentialsProvider;
+import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+import software.amazon.awssdk.regions.Region;
 import software.amazon.codeguruprofilerjavaagent.Profiler;
 
 
@@ -32,12 +35,14 @@ public class AwsConfig {
     public Profiler awsCodeGuruProfiler() {
         return new Profiler.Builder()
                 .profilingGroupName(profilingGroupName)
+                .awsRegionToReportTo(Region.of(this.region))
                 .awsCredentialsProvider(this.amazonAWSCredentials())
                 .build();
     }
 
     public AwsCredentialsProvider amazonAWSCredentials() {
-        return () -> new AwsCredentials() {
+        return StaticCredentialsProvider.create(AwsBasicCredentials.create(getAwsAccessKey(),getAwsSecretKey()));
+/*        return () -> new AwsCredentials() {
             @Override
             public String accessKeyId() {
                 System.out.println("awsAccessKey: " + awsAccessKey);
@@ -49,6 +54,6 @@ public class AwsConfig {
                 System.out.println("awsSecretAccessKey " + awsSecretKey);
                 return getAwsAccessKey();
             }
-        };
+        };*/
     }
 }

@@ -13,7 +13,7 @@ import software.amazon.codeguruprofilerjavaagent.Profiler;
 
 
 @Configuration
-@PropertySource(value = "classpath:aws.gitignore.yml")
+@PropertySource(value = "classpath:aws.gitignore.properties")
 @Data
 @Profile("aws")
 public class AwsConfig {
@@ -42,6 +42,6 @@ public class AwsConfig {
     }
 
     public AwsCredentialsProvider amazonAWSCredentials() {
-        return StaticCredentialsProvider.create(AwsBasicCredentials.create(getAwsAccessKey(),getAwsSecretKey()));
+        return StaticCredentialsProvider.create(AwsBasicCredentials.create(getAwsAccessKey(), getAwsSecretKey()));
     }
 }
